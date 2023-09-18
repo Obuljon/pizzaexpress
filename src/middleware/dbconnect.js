@@ -5,7 +5,7 @@ import { join, dirname } from "path";
 const __dirname = join(dirname(fileURLToPath(import.meta.url)), "../../");
 
 config({ path: join(__dirname, ".env") });
-const url = process.env.MONGODB_URI;
+const url = process.env.MONGODB_URL;
 export const db = connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

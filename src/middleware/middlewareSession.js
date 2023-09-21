@@ -8,11 +8,11 @@ export const middlewaresession = session({
 });
 
 
-export const middleware_order = (req, res, next) => {
-  if (!req.session.order) {
-    req.session.order = []
+export const middleware_cart = (req, res, next) => {
+  if (!req.session.cart) {
+    req.session.cart = []
   }
-  res.locals.order = req.session.order
+  res.locals.cart = req.session.cart
   res.locals.moment = moment;
   next()
 }

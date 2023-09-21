@@ -5,7 +5,7 @@ import { config } from "dotenv";
 import { notfound } from "./middleware/notfound.js";
 import { errorHandler } from "./middleware/errorHandler.js";
 import { db } from "./middleware/dbconnect.js";
-import { middlewaresession, middleware_order } from "./middleware/middlewareSession.js";
+import { middlewaresession, middleware_cart } from "./middleware/middlewareSession.js";
 import menu_router from "./routers/menu.router.js";
 import order_router from "./routers/order.router.js"
 import moment from "moment";
@@ -21,7 +21,7 @@ app.use(express.static(join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(middlewaresession);
-app.use(middleware_order);
+app.use(middleware_cart);
 
 app.use("/api", menu_router);
 app.use("/api", order_router)
